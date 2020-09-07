@@ -1,0 +1,52 @@
+@import "./../../scss/variables";
+.content-image-card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2.8rem 0 1rem 0;
+  .content-head {
+    margin-bottom: 2rem;
+    .content-main-txt {
+      font-size: 1.6rem;
+      // text-transform: capitalize;
+      font-weight: 500;
+      // letter-spacing: 0.2rem;
+    }
+  }
+  .content-msg {
+    // flex-grow: 1;
+    // flex-grow: 1;
+    margin-top: 1rem;
+    max-width: 600px;
+    text-align: center;
+    .content-msg-txt {
+      font-size: 1.2rem;
+    }
+  }
+  .content-img {
+    // flex-grow: 1;
+    width: 250px;
+    margin-bottom: 2rem;
+    .cover-img {
+      width: 100%;
+      height: 12rem;
+      background-image: url("./../../assets/img/covers/alerts/coming-soon.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      &.not-found {
+        background-image: url("./../../assets/img/covers/alerts/not-found.svg");
+      }
+      &.warning {
+        background-image: url("./../../assets/img/covers/alerts/warning.svg");
+      }
+      &.under-construction {
+        background-image: url("./../../assets/img/covers/alerts/under-construction.svg");
+      }
+      &.coming-soon {
+        background-image: url("./../../assets/img/covers/alerts/coming-soon.svg");
+      }
+    }
+  }
+}

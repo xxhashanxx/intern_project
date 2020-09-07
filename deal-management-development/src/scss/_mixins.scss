@@ -1,0 +1,83 @@
+$breackpoints: (
+  xs: 0,
+  xsm: 370,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xlg: 1400px,
+) !default;
+
+@mixin respond-to($breackpoint) {
+  @if (map-has-key($breackpoints, $breackpoint)) {
+    @media (min-width:#{map_get($breackpoints,$breackpoint)}) {
+      @content;
+    }
+  }
+}
+
+@mixin respond-to-up($breackpoint) {
+  @if (map-has-key($breackpoints, $breackpoint)) {
+    @media (max-width:#{map_get($breackpoints,$breackpoint) - 1}) {
+      @content;
+    }
+  }
+}
+@mixin transition($val) {
+  -webkit-transition: $val;
+  -moz-transition: $val;
+  -ms-transition: $val;
+  -o-transition: $val;
+  transition: $val;
+}
+
+@mixin scrollbars(
+  $size,
+  $foreground-color,
+  $background-color: mix($foreground-color, white, 50%)
+) {
+  // For Google Chrome
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+    border-radius: 20px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+    border-radius: 20px;
+  }
+
+  // For Internet Explorer
+  & {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+@mixin navscrollbars($size, $foreground-color, $background-color: #004c8c) {
+  // For Google Chrome
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+    border-radius: 20px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+    border-radius: 20px;
+  }
+
+  // For Internet Explorer
+  & {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}

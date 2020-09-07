@@ -1,0 +1,149 @@
+@import "./variables";
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+.normal-link {
+  color: #1452c3;
+  text-decoration: none;
+  font-size: 0.8rem;
+  @include transition(all 0.3s);
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.nav-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  &.active {
+    .MuiTypography-root,
+    .MuiListItemIcon-root {
+      color: $primary !important;
+      font-weight: 600;
+    }
+  }
+}
+.btn-cont {
+  padding-top: 2rem;
+}
+.btn-row {
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+  display: flex;
+  align-items: center;
+  &.space-between {
+    justify-content: space-between;
+  }
+  &.flex-end {
+    justify-content: flex-end;
+  }
+  &.flex-center {
+    justify-content: center;
+  }
+}
+.btn-grid {
+  padding-left: 0.1rem;
+  padding-right: 0.1rem;
+  &.w-50 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  &.felx-grow {
+    flex-grow: 1;
+  }
+}
+.form-box-cont {
+}
+.form-box {
+  padding: 16px 24px;
+  .form-row {
+    padding-top: 1.5rem;
+  }
+}
+
+.form-row {
+  padding-top: 0.5rem;
+}
+.collapse-box {
+  padding: 1rem;
+  padding-left: 4.25rem;
+}
+.w-50 {
+  width: 50%;
+}
+.list-item-cont {
+  width: 100%;
+  .label {
+    &.w-50 {
+    }
+  }
+  .value {
+  }
+}
+.dropzone-container {
+  .dropzone {
+    border: 1px solid gray;
+  }
+}
+.search-field-wrap {
+  &.table-search-field-wrap {
+    max-width: 300px;
+    // margin-left: auto;
+    margin: 1rem;
+    margin-left: 2.5rem;
+  }
+  .search-cont {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    height: 40px;
+    padding: 0px 16px;
+    padding-top: 2px;
+    display: flex;
+    align-items: center;
+    &.search-bordered-cont {
+      border: 1px solid $primary;
+      background-color: transparent;
+      height: 34px;
+      padding: 0px 14px;
+    }
+    .search-icon {
+      margin-right: 1rem;
+      color: inherit;
+    }
+    .search-input {
+      flex-grow: 1;
+      color: inherit;
+      input::placeholder {
+        opacity: 0.8;
+        color: inherit;
+      }
+    }
+  }
+  .close-btn {
+    padding: 0.1rem;
+  }
+}
+.join-table-cont {
+  width: 100%;
+  display: flex;
+  .join-table-grid {
+    flex: 0 0 calc(100% - 510px);
+    max-width: calc(100% - 510px);
+    &:first-child {
+      flex: 0 0 510px;
+      max-width: 510px;
+    }
+  }
+  .ellipsis-text {
+    &.cell-250 {
+      width: 250px;
+      max-width: 100%;
+    }
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

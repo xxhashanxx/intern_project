@@ -1,0 +1,32 @@
+@import "./variables";
+.MuiAppBar-root {
+  &.MuiAppBar-colorDefault {
+    background-color: $white;
+  }
+}
+.MuiCardHeader-root {
+  .MuiCardHeader-action {
+    margin-top: 0;
+  }
+}
+
+.MuiTable-root {
+  tr {
+    td,
+    th {
+      &:first-child {
+        padding-left: 24px;
+      }
+    }
+  }
+}
+.standard-select {
+  .standard-select-label {
+    &.MuiInputLabel-shrink {
+      background-color: $white;
+      padding-left: 8px;
+      padding-right: 8px;
+      margin-left: -8px;
+    }
+  }
+}

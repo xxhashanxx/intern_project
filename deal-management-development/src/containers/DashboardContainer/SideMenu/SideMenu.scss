@@ -1,0 +1,81 @@
+@import "./../../../scss/variables";
+
+.side-nav-bar {
+  height: calc(100% - 5.5rem);
+  .typo-color {
+    color: rgba($white, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+  .navigation {
+    padding: 0 0 16px 0;
+    flex-grow: 1;
+    overflow-y: scroll;
+    position: relative;
+    @include navscrollbars(8px, darken(#004463, 3%));
+    color: $white;
+
+    .MuiButton-label {
+      color: white;
+      font-weight: normal;
+      .makeStyles-icon {
+        margin-right: 12px;
+      }
+    }
+
+    .list-subheader {
+      padding-left: 1.2rem;
+      padding-right: 1.2rem;
+      @include respond-to-up(sm) {
+        line-height: 2.1rem;
+      }
+    }
+    span {
+      padding-left: 0.5rem;
+      padding-right: 1rem;
+    }
+    .collapse-item {
+      &.is-open {
+        background-color: rgba($black, 0.15);
+        > .list-button {
+          //background-color: rgba($black, 0.1);
+        }
+      }
+    }
+    .list-item {
+      // padding-left: 0.5rem;
+      // padding-right: 0.5rem;
+      cursor: pointer;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
+.list-button {
+  &.active {
+    background-color: rgba($black, 0.09);
+    .MuiButton-label {
+      color: #004463;
+    }
+  }
+}
+.navigation {
+  .MuiCollapse-container {
+    background-color: #f3f3f3;
+
+    .MuiList-root {
+      padding: 0;
+    }
+    .list-item {
+      border-bottom: 1px solid #e7e7e7;
+      &:last-child {
+        border-bottom: none;
+      }
+      .MuiButtonBase-root {
+        padding-left: 54px !important;
+        font-weight: 400;
+      }
+    }
+  }
+}
